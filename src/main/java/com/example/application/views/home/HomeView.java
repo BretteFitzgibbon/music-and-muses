@@ -1,21 +1,24 @@
 package com.example.application.views.home;
 
-import com.vaadin.flow.component.Composite;
+import ai.peoplecode.OpenAIConversation;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.Composite;
+import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Menu;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
-//import ai.peoplecode.OpenAIConversation;
+import java.util.List;
 
 
-@PageTitle("Home")
+
+@PageTitle("Music & Muses")
 @Menu(icon = "line-awesome/svg/pencil-ruler-solid.svg", order = 0)
 @Route(value = "")
 @RouteAlias(value = "")

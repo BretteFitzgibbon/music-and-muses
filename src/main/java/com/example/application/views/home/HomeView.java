@@ -12,7 +12,7 @@ import com.vaadin.flow.router.Menu;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
-import ai.peoplecode.OpenAIConversation;
+//import ai.peoplecode.OpenAIConversation;
 
 
 @PageTitle("Home")
@@ -32,7 +32,7 @@ public class HomeView extends Composite<VerticalLayout> {
         public void onComponentEvent(ClickEvent<Button> event) {
             //event.getSource()
             //        .setText("You have clicked me " + (++count) + " times");
-            String reply= conversation.askQuestion("You are Plato", askText.getValue());
+            String reply= conversation.askQuestion("You are Socrates", askText.getValue());
             replyText.setText(reply);
         }
     }

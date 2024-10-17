@@ -46,6 +46,17 @@ public class HomeView extends Composite<VerticalLayout> {
             replyText.setText(reply);
         }
     }
+
+    class artistClickListener
+            implements ComponentEventListener<ClickEvent<Button>> {
+
+        @Override
+        public void onComponentEvent(ClickEvent<Button> event) {
+            String reply = conversation.askQuestion("Based on the artist the user provides, recommend another artist that the user would also like.", askText.getValue());
+            replyText.setText(reply);
+        }
+    }
+
     public HomeView() {
         conversation = new OpenAIConversation("demo", "gpt-4o-mini");
         askText = new TextField();

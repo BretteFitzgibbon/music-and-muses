@@ -36,6 +36,16 @@ public class HomeView extends Composite<VerticalLayout> {
             replyText.setText(reply);
         }
     }
+
+    class titleClickListener
+            implements ComponentEventListener<ClickEvent<Button>> {
+
+        @Override
+        public void onComponentEvent(ClickEvent<Button> event) {
+            String reply = conversation.askQuestion("Create a numbered list of five contemporary songs with the provided word in the title. Say nothing else. No special characters.", askText.getValue());
+            replyText.setText(reply);
+        }
+    }
     public HomeView() {
         conversation = new OpenAIConversation("demo", "gpt-4o-mini");
         askText = new TextField();

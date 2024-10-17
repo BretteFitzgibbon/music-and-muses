@@ -30,12 +30,9 @@ public class HomeView extends Composite<VerticalLayout> {
     class MyClickListener
             implements ComponentEventListener<ClickEvent<Button>> {
         int count = 0;
-
         @Override
         public void onComponentEvent(ClickEvent<Button> event) {
-            //event.getSource()
-            //        .setText("You have clicked me " + (++count) + " times");
-            String reply= conversation.askQuestion("You are Socrates", askText.getValue());
+            String reply= conversation.askQuestion("Create a numbered list of five contemporary artists from the provided genre. Say nothing else. No special characters.", askText.getValue());
             replyText.setText(reply);
         }
     }

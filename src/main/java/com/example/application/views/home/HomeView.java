@@ -2,6 +2,7 @@ package com.example.application.views.home;
 
 import ai.peoplecode.OpenAIConversation;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.ComponentEventListener;
@@ -9,6 +10,7 @@ import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Menu;
 import com.vaadin.flow.router.PageTitle;
@@ -90,6 +92,13 @@ public class HomeView extends Composite<VerticalLayout> {
         getContent().add(replyText);
         getContent().add(titleButton);
         getContent().add(artistButton);
+        HorizontalLayout buttonLayout = new HorizontalLayout(genreButton, titleButton, artistButton);
+        // Add components to the main layout
+        getContent().setWidth("100%");
+        getContent().getStyle().set("flex-grow", "1");
+        getContent().add(askText); // Add ask text field
+        getContent().add(buttonLayout); // Add the button layout containing both buttons
+        getContent().add(replyText); // Add the reply paragraph
 
         List <String> questions;
         genreButton.setText("Genre");

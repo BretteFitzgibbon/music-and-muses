@@ -91,6 +91,10 @@ public class HomeView extends Composite<VerticalLayout> {
         getContent().add(titleButton);
         getContent().add(artistButton);
 
+        List <String> questions;
+        //questions = conversation.generateSampleQuestions("Ask Socrates a question", 10, 20);
+        // String genreQuestion = conversation.askQuestion("Provide five contemporary artists from the provided genre", "Trance");
+        //String question = questions.getFirst();
         genreButton.setText("Genre");
         titleButton.setText("Title");
         artistButton.setText("Artist");
@@ -105,7 +109,30 @@ public class HomeView extends Composite<VerticalLayout> {
 
         getContent().add(image);
     }
+//    public HomeView() {
+//        conversation = new OpenAIConversation("demo", "gpt-4o-mini");
+//        askText = new TextField();
+//        Button askButton = new Button();
+//        replyText = new Paragraph();
+//        replyText.setWidth("80%");
+//        replyText.setHeight("300px");
+//        replyText.getStyle().set("border", "1px solid black");
+//        getContent().setWidth("100%");
+//        getContent().getStyle().set("flex-grow", "1");
+//        askText.setLabel("Ask Socrates a Question");
+//        askText.setWidth("min-content");
+//        askButton.setText("Ask");
+//        askButton.setWidth("min-content");
+//        askButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+//
+//        //replyText.setWidth("min-content");
+//        getContent().add(askText);
+//        getContent().add(askButton);
+//        getContent().add(replyText);
+//
+//        askButton.addClickListener(new MyClickListener());
+//
+//    }
 
 
 }
-

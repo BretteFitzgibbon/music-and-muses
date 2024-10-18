@@ -58,29 +58,83 @@ public class HomeView extends Composite<VerticalLayout> {
     }
 
     public HomeView() {
-        conversation = new OpenAIConversation("demo", "gpt-4o-mini");
-        askText = new TextField();
-        Button askButton = new Button();
-        replyText = new Paragraph();
+        conversation = new OpenAIConversation("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", "gpt-4o-mini");
+        askText = new TextField(); // this is where the question is asked
+        Button genreButton = new Button();
+        Button titleButton = new Button();
+        Button artistButton = new Button();
+        replyText = new Paragraph(); // this is the response
         replyText.setWidth("80%");
-        replyText.setHeight("300px");
+        replyText.setHeight("min-content");
         replyText.getStyle().set("border", "1px solid black");
         getContent().setWidth("100%");
         getContent().getStyle().set("flex-grow", "1");
-        askText.setLabel("Ask Socrates a Question");
+        askText.setLabel("Ask for Artist and Song Recs");
         askText.setWidth("min-content");
-        askButton.setText("Ask");
-        askButton.setWidth("min-content");
-        askButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        genreButton.setText("Genre Artists");
+        genreButton.setWidth("min-content");
+        genreButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        artistButton.setText("Genre Artists");
+        artistButton.setWidth("min-content");
+        artistButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        askText.setLabel("Ask for Artist and Song Recs");
+        genreButton.setText("Genre Artists");
+        genreButton.setWidth("min-content");
+        genreButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
 
-        //replyText.setWidth("min-content");
+        titleButton.setWidth("min-content");
+        titleButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+
         getContent().add(askText);
-        getContent().add(askButton);
+        getContent().add(genreButton);
         getContent().add(replyText);
+        getContent().add(titleButton);
+        getContent().add(artistButton);
 
-        askButton.addClickListener(new MyClickListener());
+        List <String> questions;
+        //questions = conversation.generateSampleQuestions("Ask Socrates a question", 10, 20);
+        // String genreQuestion = conversation.askQuestion("Provide five contemporary artists from the provided genre", "Trance");
+        //String question = questions.getFirst();
+        genreButton.setText("Genre");
+        titleButton.setText("Title");
+        artistButton.setText("Artist");
+        MyClickListener listener = new MyClickListener();
+        genreButton.addClickListener(listener);
+        titleButton.addClickListener(new titleClickListener());
+        artistButton.addClickListener(new artistClickListener());
 
+        Image image = new Image("https://i.etsystatic.com/14239514/r/il/10f8c0/1155778745/il_570xN.1155778745_ij52.jpg", "Music Notes");
+        image.setWidth("570px");
+        image.setHeight("428px");
+
+        getContent().add(image);
     }
+
+
+//    public HomeView() {
+//        conversation = new OpenAIConversation("demo", "gpt-4o-mini");
+//        askText = new TextField();
+//        Button askButton = new Button();
+//        replyText = new Paragraph();
+//        replyText.setWidth("80%");
+//        replyText.setHeight("300px");
+//        replyText.getStyle().set("border", "1px solid black");
+//        getContent().setWidth("100%");
+//        getContent().getStyle().set("flex-grow", "1");
+//        askText.setLabel("Ask Socrates a Question");
+//        askText.setWidth("min-content");
+//        askButton.setText("Ask");
+//        askButton.setWidth("min-content");
+//        askButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+//
+//        //replyText.setWidth("min-content");
+//        getContent().add(askText);
+//        getContent().add(askButton);
+//        getContent().add(replyText);
+//
+//        askButton.addClickListener(new MyClickListener());
+//
+//    }
 
 
 }

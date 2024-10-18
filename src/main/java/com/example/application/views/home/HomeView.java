@@ -92,9 +92,6 @@ public class HomeView extends Composite<VerticalLayout> {
         getContent().add(artistButton);
 
         List <String> questions;
-        //questions = conversation.generateSampleQuestions("Ask Socrates a question", 10, 20);
-        // String genreQuestion = conversation.askQuestion("Provide five contemporary artists from the provided genre", "Trance");
-        //String question = questions.getFirst();
         genreButton.setText("Genre");
         titleButton.setText("Title");
         artistButton.setText("Artist");

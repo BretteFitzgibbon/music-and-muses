@@ -1,6 +1,6 @@
 package com.example.application.views.home;
 
-package ai.peoplecode;
+//package ai.peoplecode;
 
 import dev.langchain4j.data.message.AiMessage;
 import dev.langchain4j.data.message.ChatMessage;

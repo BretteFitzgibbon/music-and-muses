@@ -11,6 +11,7 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Menu;
 import com.vaadin.flow.router.PageTitle;
@@ -60,50 +61,52 @@ public class HomeView extends Composite<VerticalLayout> {
     }
 
     public HomeView() {
-        conversation = new OpenAIConversation("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", "gpt-4o-mini");
+        conversation = new OpenAIConversation("demo", "gpt-4o-mini");
         askText = new TextField(); // this is where the question is asked
+
+        TextArea instructions = new TextArea();
+        instructions.setLabel("Instructions");
+        instructions.setValue("1. Enter a genre, song title keyword, or artist in the input field.\n"
+                + "2. Click the corresponding button to get recommendations or a song with the keyword in it.\n"
+                + "3. Enjoy the curated list of artists and songs!");
+        instructions.setWidth("80%");
+        instructions.setReadOnly(true);
+
         Button genreButton = new Button();
         Button titleButton = new Button();
         Button artistButton = new Button();
+
         replyText = new Paragraph(); // this is the response
         replyText.setWidth("80%");
         replyText.setHeight("min-content");
         replyText.getStyle().set("border", "1px solid black");
         getContent().setWidth("100%");
         getContent().getStyle().set("flex-grow", "1");
-        askText.setLabel("Ask for Artist and Song Recs");
+        askText.setLabel("Your input: ");
+        askText.setWidth("80%");
         askText.setWidth("min-content");
-        genreButton.setText("Genre Artists");
-        genreButton.setWidth("min-content");
-        genreButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-        artistButton.setText("Genre Artists");
-        artistButton.setWidth("min-content");
-        artistButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-        askText.setLabel("Ask for Artist and Song Recs");
-        genreButton.setText("Genre Artists");
+
+        genreButton.setText("Genre");
         genreButton.setWidth("min-content");
         genreButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
 
+        artistButton.setText("Artist");
+        artistButton.setWidth("min-content");
+        artistButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+
+        titleButton.setText("Title");
         titleButton.setWidth("min-content");
         titleButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
 
+        getContent().add(instructions);
         getContent().add(askText);
-        getContent().add(genreButton);
-        getContent().add(replyText);
-        getContent().add(titleButton);
-        getContent().add(artistButton);
         HorizontalLayout buttonLayout = new HorizontalLayout(genreButton, titleButton, artistButton);
         // Add components to the main layout
         getContent().setWidth("100%");
         getContent().getStyle().set("flex-grow", "1");
-        getContent().add(askText); // Add ask text field
-        getContent().add(buttonLayout); // Add the button layout containing both buttons
-        getContent().add(replyText); // Add the reply paragraph
+        getContent().add(buttonLayout);
+        getContent().add(replyText);
 
-        List <String> questions;
-        genreButton.setText("Genre");
-        titleButton.setText("Title");
-        artistButton.setText("Artist");
         MyClickListener listener = new MyClickListener();
         genreButton.addClickListener(listener);
         titleButton.addClickListener(new titleClickListener());

@@ -45,7 +45,7 @@ public class HomeView extends Composite<VerticalLayout> {
 
         @Override
         public void onComponentEvent(ClickEvent<Button> event) {
-            String reply = conversation.askQuestion("Create a numbered list of five contemporary songs with the provided word in the title. Say nothing else. No special characters.", askText.getValue());
+            String reply = conversation.askQuestion("Create a numbered list of five contemporary songs with the provided word in the title. Say nothing else. No special characters but line break after each number.", askText.getValue());
             replyText.setText(reply);
         }
     }

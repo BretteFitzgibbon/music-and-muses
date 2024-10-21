@@ -2,8 +2,7 @@ Music & Muses
 
 By Summer Liu and Brette Fitzgibbon. A generative AI project for the University of San Francisco CS 514 Bridge Software Development course.
 
-Music & Muses is a music recommender powered by ChatGPT that recommends music based on genre, song title, and artist. By inputting content and clicking on the corresponding button ("genre", "artist", or "title keyword"), the program outputs ChatGPT recommendations based on user input. The "genre" button provides five artists of the genre the user inputs. The 
-"title" button provides five songs with the user-inputted word in the title. The "artist" button provides an artist the user might like based on the artist they input. 
+Music & Muses is a music recommender powered by ChatGPT that recommends music based on genre, song title, and artist. By inputting content and clicking on the corresponding button ("genre", "artist", or "title keyword"), the program outputs ChatGPT recommendations based on user input. The "genre" button provides five artists of the genre the user inputs. The "title" button provides five songs with the user-inputted word in the title. The "artist" button provides an artist the user might like based on the artist they input. 
 
 It is written in Java using the Vaadin library, which uses CSS, TypeScript, and HTML to create a user interface, and the PeopleCodeOpenAI library, which has methods that respond to generative AI input. It uses the "demo" OpenAI key from LangChain4j on the GPT 4o Mini model. It has an overall vertical layout. 
 

@@ -28,6 +28,6 @@ Features:
 -- Reply box
    A Paragraph object whose size expands based on the length of the response. It does not accumulate replies from multiple questions. 
 
-The most challenging aspect was calling OpenAI. In a prior attempt, our program could not be pushed to GitHub because the OpenAI API key was exposed. It was flagged as a "secret" by OpenAI and was disabled after we pushed it. We should have set an environment variable. Using the LangChain4j demo key that came from class worked because the exact string of numbers and letters was not exposed. 
+The most challenging aspect was calling OpenAI. In a prior attempt, our program could not be pushed to GitHub because the OpenAI API key was exposed. It was flagged as a "secret" by OpenAI and was disabled after we pushed it. We should have set an environment variable in the terminal. But using the LangChain4j demo key that came from class worked as well.
 
 

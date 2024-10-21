@@ -60,6 +60,16 @@ public class HomeView extends Composite<VerticalLayout> {
         }
     }
 
+    class nationClickListener
+            implements ComponentEventListener<ClickEvent<Button>> {
+
+        @Override
+        public void onComponentEvent(ClickEvent<Button> event) {
+            String reply = conversation.askQuestion("Based on the nation the user provides, provide a list of five artists who are based in that nation. Say nothing else. No special characters.", askText.getValue());
+            replyText.setText(reply);
+        }
+    }
+
     public HomeView() {
         conversation = new OpenAIConversation("demo", "gpt-4o-mini");
         askText = new TextField(); // this is where the question is asked
@@ -75,6 +85,7 @@ public class HomeView extends Composite<VerticalLayout> {
         Button genreButton = new Button();
         Button titleButton = new Button();
         Button artistButton = new Button();
+        Button nationButton = new Button();
 
         replyText = new Paragraph(); // this is the response
         replyText.setWidth("80%");
@@ -98,9 +109,13 @@ public class HomeView extends Composite<VerticalLayout> {
         titleButton.setWidth("min-content");
         titleButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
 
+        nationButton.setText("Nation");
+        nationButton.setWidth("min-content");
+        nationButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+
         getContent().add(instructions);
         getContent().add(askText);
-        HorizontalLayout buttonLayout = new HorizontalLayout(genreButton, titleButton, artistButton);
+        HorizontalLayout buttonLayout = new HorizontalLayout(genreButton, titleButton, artistButton, nationButton);
         // Add components to the main layout
         getContent().setWidth("100%");
         getContent().getStyle().set("flex-grow", "1");
@@ -111,6 +126,7 @@ public class HomeView extends Composite<VerticalLayout> {
         genreButton.addClickListener(listener);
         titleButton.addClickListener(new titleClickListener());
         artistButton.addClickListener(new artistClickListener());
+        nationButton.addClickListener(new nationClickListener());
 
         Image image = new Image("https://i.etsystatic.com/14239514/r/il/10f8c0/1155778745/il_570xN.1155778745_ij52.jpg", "Music Notes");
         image.setWidth("570px");

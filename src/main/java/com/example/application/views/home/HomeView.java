@@ -76,7 +76,7 @@ public class HomeView extends Composite<VerticalLayout> {
 
         TextArea instructions = new TextArea();
         instructions.setLabel("Instructions");
-        instructions.setValue("1. Enter a genre, song title keyword, or artist in the input field.\n"
+        instructions.setValue("1. Enter a genre, song title keyword, artist, or nation in the input field.\n"
                 + "2. Click the corresponding button to get recommendations or a song with the keyword in it.\n"
                 + "3. Enjoy the curated list of artists and songs!");
         instructions.setWidth("80%");

@@ -5,6 +5,8 @@ In collaboration with my classmate Summer Liu.
 What This Program Does:
 Music & Muses is a music recommender powered by ChatGPT that recommends music based on genre, song title, artist, and nation. By inputting content and clicking on the corresponding button ("genre", "artist", "title", or "nation"), the program outputs ChatGPT recommendations based on user input. The "genre" button provides five songs of the genre the user inputs. The "title" button provides five songs with the user-inputted word in the title. The "nation" button provides five artists based in the user-inputted country. The "artist" button provides an artist the user might like based on the artist they input. 
 
+______________________________________________________________________
+
 What This Program Entails:
 It is written in Java using the Vaadin library, which uses CSS, TypeScript, and HTML to create a user interface, and the PeopleCodeOpenAI library, which has methods that respond to generative AI input. It uses the "demo" OpenAI key from LangChain4j on the GPT 4o Mini model. It has an overall vertical layout. 
 
@@ -33,6 +35,8 @@ Features:
 
 -- Reply box
    A Paragraph object whose size expands based on the length of the response. It does not accumulate replies from multiple questions. 
+
+_____________________________________________________________________________
 
 How to Build:
 

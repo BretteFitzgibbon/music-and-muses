@@ -34,7 +34,7 @@ public class HomeView extends Composite<VerticalLayout> {
             implements ComponentEventListener<ClickEvent<Button>> {
         int count = 0;
         @Override
-        public void onComponentEvent(ClickEvent<Button> event) {
+        public void onComponentEvent(ClickEvent<Button> event) { // Genre prompt
             String reply= conversation.askQuestion("Create a numbered list of five contemporary artists from the provided genre. Say nothing else. No special characters.", askText.getValue());
             replyText.setText(reply);
         }
@@ -44,7 +44,7 @@ public class HomeView extends Composite<VerticalLayout> {
             implements ComponentEventListener<ClickEvent<Button>> {
 
         @Override
-        public void onComponentEvent(ClickEvent<Button> event) {
+        public void onComponentEvent(ClickEvent<Button> event) { // Song title prompt
             String reply = conversation.askQuestion("Create a numbered list of five contemporary songs with the provided word in the title, and provide the artist next to each song title. Don't say anything before or after this list.", askText.getValue());
             replyText.setText(reply);
         }
@@ -54,7 +54,7 @@ public class HomeView extends Composite<VerticalLayout> {
             implements ComponentEventListener<ClickEvent<Button>> {
 
         @Override
-        public void onComponentEvent(ClickEvent<Button> event) {
+        public void onComponentEvent(ClickEvent<Button> event) { // Artist prompt
             String reply = conversation.askQuestion("Based on the artist the user provides, recommend another artist that the user would also like.", askText.getValue());
             replyText.setText(reply);
         }
@@ -64,7 +64,7 @@ public class HomeView extends Composite<VerticalLayout> {
             implements ComponentEventListener<ClickEvent<Button>> {
 
         @Override
-        public void onComponentEvent(ClickEvent<Button> event) {
+        public void onComponentEvent(ClickEvent<Button> event) { // Nation prompt
             String reply = conversation.askQuestion("Based on the nation the user provides, provide a list of five artists who are based in that nation. Say nothing else. No special characters.", askText.getValue());
             replyText.setText(reply);
         }
@@ -75,7 +75,7 @@ public class HomeView extends Composite<VerticalLayout> {
         askText = new TextField(); // this is where the question is asked
 
         TextArea instructions = new TextArea();
-        instructions.setLabel("Instructions");
+        instructions.setLabel("Instructions"); // Text box with instructions for the user
         instructions.setValue("1. Enter a genre, song title keyword, artist, or nation in the input field.\n"
                 + "2. Click the corresponding button to get recommendations or a song with the keyword in it.\n"
                 + "3. Enjoy the curated list of artists and songs!");
@@ -97,6 +97,7 @@ public class HomeView extends Composite<VerticalLayout> {
         askText.setWidth("80%");
         askText.setWidth("min-content");
 
+        // Buttons
         genreButton.setText("Genre");
         genreButton.setWidth("min-content");
         genreButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
@@ -122,12 +123,14 @@ public class HomeView extends Composite<VerticalLayout> {
         getContent().add(buttonLayout);
         getContent().add(replyText);
 
+        // Responses to clicks
         MyClickListener listener = new MyClickListener();
         genreButton.addClickListener(listener);
         titleButton.addClickListener(new titleClickListener());
         artistButton.addClickListener(new artistClickListener());
         nationButton.addClickListener(new nationClickListener());
 
+        // Music notes image
         Image image = new Image("https://i.etsystatic.com/14239514/r/il/10f8c0/1155778745/il_570xN.1155778745_ij52.jpg", "Music Notes");
         image.setWidth("570px");
         image.setHeight("428px");

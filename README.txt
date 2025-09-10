@@ -1,6 +1,6 @@
 Music & Muses
 
-In collaboration with my classmate Summer Liu.
+In collaboration with my classmate @summerliu-usf .
 
 What This Program Does:
 Music & Muses is a music recommender powered by ChatGPT that recommends music based on genre, song title, artist, and nation. By inputting content and clicking on the corresponding button ("genre", "artist", "title", or "nation"), the program outputs ChatGPT recommendations based on user input. The "genre" button provides five songs of the genre the user inputs. The "title" button provides five songs with the user-inputted word in the title. The "nation" button provides five artists based in the user-inputted country. The "artist" button provides an artist the user might like based on the artist they input. 
